@@ -52,6 +52,7 @@ def prediction():
     return jsonify(result)
 
 
+@app.route()
 
 @app.route('/ping', methods=['GET'])
 def ping():
