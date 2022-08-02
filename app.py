@@ -8,7 +8,7 @@ from flask import Flask, request, Response, jsonify
 model_pickle = open("./artefacts/classifier.pkl", 'rb')
 clf = pickle.load(model_pickle)
 
-app = Flask("loan_approval")
+app = Flask(__name__)
 
 
 # defining the function which will make the prediction using the data which the user inputs 
@@ -51,8 +51,6 @@ def prediction():
 
     return jsonify(result)
 
-
-@app.route()
 
 @app.route('/ping', methods=['GET'])
 def ping():
